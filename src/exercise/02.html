@@ -30,14 +30,17 @@
     // ReactDOM.render(reactElement, rootElement)
 
     // KCD Extra Ans
-    const element = React.createElement('div', {
-      className: 'container',
-      children: [
-        React.createElement('span', null, 'Hello'),
-        ' ',
-        React.createElement('span', null, 'World'),
-      ],
-    })
+    const helloElement = React.createElement('span', null, 'Hello')
+    const worldElement = React.createElement('span', null, 'World')
+    const element = React.createElement(
+      'div',
+      {
+        className: 'container',
+      },
+      helloElement,
+      ' ',
+      worldElement,
+    )
     ReactDOM.render(element, rootElement)
 
     // 🐨 Please re-implement the regular document.createElement code above
