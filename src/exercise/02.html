@@ -18,10 +18,27 @@
     // This is similar to ReactDOM.render
     // rootElement.append(element)
 
-    const elementProps = {className: 'container', children: 'Hello world!'}
+    const elementProps = {className: 'container', children: 'Hello World!'}
     const elementType = 'div'
     const reactElement = React.createElement(elementType, elementProps)
     ReactDOM.render(reactElement, rootElement)
+
+    // Extra
+    // const elementProps = {className: 'container', children: ['Hello', ' World']}
+    // const elementType = 'span'
+    // const reactElement = React.createElement(elementType, elementProps)
+    // ReactDOM.render(reactElement, rootElement)
+
+    // KCD Extra Ans
+    const element = React.createElement('div', {
+      className: 'container',
+      children: [
+        React.createElement('span', null, 'Hello'),
+        ' ',
+        React.createElement('span', null, 'World'),
+      ],
+    })
+    ReactDOM.render(element, rootElement)
 
     // 🐨 Please re-implement the regular document.createElement code above
     // with these React API calls
