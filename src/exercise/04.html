@@ -10,8 +10,13 @@
     // 🐨 Make a function called `message` which returns the JSX we want to share
 
     // 🐨 use that function in place of the divs below with:
-    const Message = ({children}) => <div className="message">{children}</div>
-
+    function Message({subject, greeting}) {
+      return (
+        <div className="message">
+          {greeting}, {subject}
+        </div>
+      )
+    }
     // const element = (
     //   <div className="container">
     //     {message({children: 'Hello World'})}
@@ -28,10 +33,35 @@
     // )
 
     // Extra 2
+    // const element = (
+    //   <div className="container">
+    //     <Message children="Hello World" />
+    //     <Message children="Goodbye World" />
+    //   </div>
+    // )
+
+    // Extra 3
+    const PropTypes = {
+      string(props, propName, componentName) {
+        if (typeof props[propName] !== 'string') {
+          return new Error(
+            `The component ${componentName} needs the prop ${propName} to be a string but a ${typeof props[
+              propName
+            ]} was passed`,
+          )
+        }
+      },
+    }
+
+    Message.propTypes = {
+      greeting: PropTypes.string,
+      subject: PropTypes.string,
+    }
+
     const element = (
       <div className="container">
-        <Message children="Hello World" />
-        <Message children="Goodbye World" />
+        <Message greeting="Hello" subject="World" />
+        <Message greeting="Goodbye" subject="World" />
       </div>
     )
 
