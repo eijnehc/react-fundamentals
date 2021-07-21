@@ -67,16 +67,24 @@
     // )
 
     // Extra 4
-    Message.propTypes = {
-      greeting: PropTypes.string.isRequired,
-      subject: PropTypes.string.isRequired,
-    }
+    // Message.propTypes = {
+    //   greeting: PropTypes.string.isRequired,
+    //   subject: PropTypes.string.isRequired,
+    // }
 
+    // const element = (
+    //   <div className="container">
+    //     <Message greeting="Hello" subject="World" />
+    //     <Message greeting="Goodbye" subject="World" />
+    //   </div>
+    // )
+
+    // Extra 5
     const element = (
-      <div className="container">
+      <>
         <Message greeting="Hello" subject="World" />
         <Message greeting="Goodbye" subject="World" />
-      </div>
+      </>
     )
 
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
